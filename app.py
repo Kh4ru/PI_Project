@@ -16,7 +16,7 @@ get_current()
 update()
 @app.route("/")
 def home():
-get_current()
+    get_current()
     return render_template("index.html",pi=str(mp.pi))
 
 @app.route("/update")

@@ -18,5 +18,8 @@ update()
 def home():
     return render_template("index.html",pi=str(mp.pi))
 
+@app.route("/update")
+def upd():
+    update()
 if __name__ == "__main__":
     app.run(debug=False)

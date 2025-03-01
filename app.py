@@ -21,5 +21,6 @@ def home():
 @app.route("/update")
 def upd():
     update()
+    return "Updated !"
 if __name__ == "__main__":
     app.run(debug=False)

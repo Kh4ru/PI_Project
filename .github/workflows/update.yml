@@ -1,0 +1,20 @@
+name: Update Pi Data
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Cette action se déclenche tous les jours à minuit UTC
+  workflow_dispatch:  # Permet de déclencher l'action manuellement
+
+jobs:
+  update-pi:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout du code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Effectuer une requête GET à /update
+      - name: Trigger update on Flask app
+        run: |
+          curl https://pi-project-86dt.onrender.com/update
